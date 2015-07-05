@@ -8,6 +8,23 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="textBox" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Twitter Search Application" VerticalAlignment="Top" FontSize="42"/>
+        <ListView x:Name="TweetList" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="80,100,80,80">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="360" Height="80" Background="LightBlue">
+                        <Image Margin="0" Width="80" Height="80" HorizontalAlignment="Left" Source="{Binding Image}" Stretch="Uniform"/>
+                        <TextBlock Text="{Binding Message}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="White" TextWrapping="Wrap" Margin="100,5,5,5"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
 
     </Grid>
 </Page>
